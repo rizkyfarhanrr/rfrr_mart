@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">MidleTest_rfrr_mart</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+
+    <string name="next">Next</string>
+    <string name="getstarted">Get Started </string>
+
+    // Title
+    <string name="title_PackageTravel">Happy Travel </string>
+    <string name="title_PackageHotel">Chose Hotel</string>
+    <string name="title_PackageDestinationTour">Destination Tour</string>
+    <string name="title_PackageGuide">More Guide</string>
+    // Subtitle
+    <string name="travel_text">Happy Travel with Go Travel Apps!</string>
+    <string name="hotel_text">Chose Hotel as you want </string>
+    <string name="destination_text">More Destination Tour in your place</string>
+    <string name="guide_text">You can get the guide with fun teach</string>
+    <string name="created_by_rizky_farhan_r">Created by Rizky Farhan R.</string>
+    <string name="ig">_@rizkyfarhaanrr</string>
+</resources>
