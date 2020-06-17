@@ -16,6 +16,9 @@ public class InformasiUserItem{
 	@SerializedName("email_user")
 	private String emailUser;
 
+	@SerializedName("phone_user")
+	private String phoneUser;
+
 	@SerializedName("namalengkap_user")
 	private String namalengkapUser;
 
@@ -25,10 +28,9 @@ public class InformasiUserItem{
 	@SerializedName("username_user")
 	private String usernameUser;
 
-	@SerializedName("picture")
-	private String picture;
-
-	public String getKodeUser(){ return kodeUser;}
+	public String getKodeUser(){
+		return kodeUser;
+	}
 
 	public String getJeniskelaminUser(){
 		return jeniskelaminUser;
@@ -42,6 +44,10 @@ public class InformasiUserItem{
 		return emailUser;
 	}
 
+	public String getPhoneUser(){
+		return phoneUser;
+	}
+
 	public String getNamalengkapUser(){
 		return namalengkapUser;
 	}
@@ -52,9 +58,5 @@ public class InformasiUserItem{
 
 	public String getUsernameUser(){
 		return usernameUser;
-	}
-
-	public String getPicture(){
-		return picture;
 	}
 }

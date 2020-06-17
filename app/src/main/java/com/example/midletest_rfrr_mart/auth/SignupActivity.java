@@ -27,7 +27,7 @@ import retrofit2.Response;
 
 public class SignupActivity extends AppCompatActivity {
 
-    EditText ed_namalengkap, ed_jeniskelamin, ed_user,  ed_passwd, ed_confirm_passwd, ed_email_signup , code_user , phone_user;
+    EditText ed_namalengkap, ed_jeniskelamin, ed_user,ed_email_signup ,  ed_passwd, ed_confirm_passwd, code_user , phone_user;
     Button btn_signupRegist;
 
     Bundle adapterBundle;
@@ -42,9 +42,9 @@ public class SignupActivity extends AppCompatActivity {
         ed_namalengkap = (EditText)findViewById(R.id.nama_lengkap);
         ed_jeniskelamin = (EditText)findViewById(R.id.jenis_kelamin);
         ed_user = (EditText)findViewById(R.id.username_signup);
+        ed_email_signup = (EditText)findViewById(R.id.email_signup);
         ed_passwd = (EditText)findViewById(R.id.pass_signup);
         ed_confirm_passwd = (EditText)findViewById(R.id.conf_pass_signup);
-        ed_email_signup = (EditText)findViewById(R.id.email_signup);
         code_user = (EditText)findViewById(R.id.codeSignup);
         phone_user = (EditText)findViewById(R.id.phone_signup);
 
@@ -64,15 +64,15 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     public void modulConfirmInput() {
-        String getnamalengkap, getjeniskelamin, getusername, getpassword, getconfirmPASSWD, getemail ,getcode,getphone;
+        String getnamalengkap, getjeniskelamin, getusername,getemail , getpassword, getconfirmPASSWD, getcode,getphone;
         boolean cancel = false;
 
         getnamalengkap = ed_namalengkap.getText().toString().trim();
         getjeniskelamin = ed_jeniskelamin.getText().toString().trim();
         getusername = ed_user.getText().toString().trim();
+        getemail = ed_email_signup.getText().toString().trim();
         getpassword = ed_passwd.getText().toString().trim();
         getconfirmPASSWD = ed_confirm_passwd.getText().toString().trim();
-        getemail = ed_email_signup.getText().toString().trim();
         getcode = code_user.getText().toString().trim();
         getphone = phone_user.getText().toString().trim();
 
@@ -119,13 +119,14 @@ public class SignupActivity extends AppCompatActivity {
             // TODO A.1: ADD PREFERENCES HERE
             Preferences.setregistereduser(getBaseContext(), getusername);
             Preferences.setregisteredpass(getBaseContext(), getpassword);
+            Preferences.setregisteredCode(getBaseContext(), getcode);
 
             moduleregisteruser(getnamalengkap, getjeniskelamin, getusername, getemail, getpassword, getcode , getphone);
         }
     }
 
     public void moduleregisteruser(String nm_user, String jk_user, final String usr_user,String eml_user, final String pwd_user, String cd_user, String phn_user){
-        final ProgressDialog dialog = ProgressDialog.show(SignupActivity.this, "Please wait ....", "Register Proccessing..");
+        final ProgressDialog dialog = ProgressDialog.show(SignupActivity.this, "Wait ... ", "your data is being processed ... ");
 
 
         ApiServices apiServices = RetrofitClient.getInstanceRetrofit();
@@ -141,7 +142,7 @@ public class SignupActivity extends AppCompatActivity {
                         Boolean status = response.body().isStatus();
                         
                         if (status.equals(true)) {
-                            Toast.makeText(SignupActivity.this, "Register Succesfully !", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignupActivity.this, "Register Complete !", Toast.LENGTH_SHORT).show();
                             String body = String.valueOf(response.body().getDataUser());
 
                             Log.d("LOG", "Register " + body);

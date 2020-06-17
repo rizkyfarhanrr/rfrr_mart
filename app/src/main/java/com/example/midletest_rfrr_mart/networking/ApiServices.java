@@ -15,8 +15,8 @@ public interface ApiServices {
                     @Field("namalengkap_user") String str_namalkp,
                     @Field("jeniskelamin_user") String str_jnskelammin,
                     @Field("username_user") String str_username,
-                    @Field("password_user") String str_passwd,
                     @Field("email_user") String str_emailusr,
+                    @Field("password_user") String str_passwd,
                     @Field("kode_user") String str_kodeuser,
                     @Field("phone_user") String str_phoneuser
 
